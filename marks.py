@@ -11,32 +11,35 @@ def initialize():
             writer.writerow(["roll","name"]+SUBJECTS+["total"])
 
 def add_student():
-    roll=input("Enter roll no:")
-    name=input("Enter name:")
-    marks=[0]*len(SUBJECTS)
+    roll=input("Enter roll no: ")
+    name=input("Enter name: ")
+    marks=[]
     total=0
+    for subject in SUBJECTS:
+        m=int(input(f"Enter marks for {subject}: "))
+        marks.append(m)
+        total+=m
     with open(FILE_NAME,"a",newline="") as f:
         writer=csv.writer(f)
         writer.writerow([roll,name]+marks+[total])
-    print("Student added")
+    print("Student added successfully")
 
 def display_students():
     with open(FILE_NAME,"r",newline="") as f:
         reader=csv.reader(f)
         next(reader)
         for row in reader:
-            print("Roll:",row[0],"Name:",row[1])
+            print(row[0],row[1])
 
 def update_student_marks(subject_index):
-    roll=input("Enter roll no:")
+    roll=input("Enter roll no: ")
     with open(FILE_NAME,"r",newline="") as f:
         rows=list(csv.reader(f))
     header=rows[0]
     data=rows[1:]
     for row in data:
         if row[0]==roll:
-            display_students()
-            new_mark=int(input("Enter marks:"))
+            new_mark=int(input("Enter new marks: "))
             row[2+subject_index]=str(new_mark)
             marks=list(map(int,row[2:8]))
             row[8]=str(sum(marks))
@@ -71,7 +74,7 @@ def teacher_menu():
     print("4.GTC")
     print("5.GGM")
     print("6.MATH")
-    ch=int(input("Enter subject choice:"))
+    ch=int(input("Enter subject choice: "))
     if 1<=ch<=6:
         display_students()
         update_student_marks(ch-1)
@@ -85,7 +88,7 @@ def main():
         print("3.Finalize and Sort Result")
         print("4.View Results")
         print("5.Exit")
-        choice=int(input("Enter choice:"))
+        choice=int(input("Enter choice: "))
         if choice==1:
             add_student()
         elif choice==2:
