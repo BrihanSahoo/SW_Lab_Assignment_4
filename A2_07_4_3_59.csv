@@ -9,16 +9,16 @@ id,title,completed
 8,Read a book for 20 minutes,False
 9,Plan tasks for tomorrow,True
 10,Go to bed on time,True
-
-
-
-
-
-
-
-
-
-
+11,Drink enough water,False
+12,Practice coding problems,True
+13,Clean workspace,False
+14,Attend online meeting,True
+15,Review daily goals,True
+16,Spend time with family,False
+17,Go for a short walk,True
+18,Organize files and notes,False
+19,Write journal entry,False
+20,Prepare things for next day,True
 21,Check calendar schedule,False
 22,Update task manager,True
 23,Prepare lunch,False
