@@ -1,7 +1,7 @@
 import os
 import csv
 
-FILE_NAME = "marks.csv"
+FILE_NAME = "A2_07_4_2_41.csv"
 SUBJECTS = ["SE","OOS","CN","GTC","GGM","MATH"]
 
 def initialize():
