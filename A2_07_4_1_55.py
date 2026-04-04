@@ -1,7 +1,7 @@
 import csv
 import os
 
-INVENTORY_FILE = "inventory.csv"
+INVENTORY_FILE = "A2_07_4_1_55.csv"
 PURCHASE_FILE = "purchase_history.csv"
 
 
